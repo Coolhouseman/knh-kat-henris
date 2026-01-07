@@ -16,6 +16,17 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // SEO/canonical: keep apex domain as the single source of truth
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.knh.nz' }],
+        destination: 'https://knh.nz/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
