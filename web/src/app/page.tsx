@@ -5,10 +5,10 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Modern Hand-Painted Wallpapers",
+  title: "Hand-Painted Wallpapers",
   description: "Experience the new language of interior artistry. We create bespoke, hand-painted wallpapers that flatten nature into bold, post-modern environments.",
   openGraph: {
-    title: "Modern Hand-Painted Wallpapers",
+    title: "Hand-Painted Wallpapers",
     description: "Experience the new language of interior artistry. Bespoke, hand-painted wallpapers that flatten nature into bold, post-modern environments.",
     images: ["https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2600&auto=format&fit=crop"],
   },
