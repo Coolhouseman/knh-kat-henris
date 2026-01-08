@@ -67,6 +67,7 @@ export default function BlogPostPage({ params }: PageProps) {
           fill 
           className="object-cover"
           priority
+          sizes="100vw"
         />
       </div>
 

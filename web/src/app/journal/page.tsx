@@ -20,7 +20,7 @@ export default function JournalPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, idx) => (
             <article key={post.slug} className="flex flex-col group cursor-pointer">
               <Link href={`/journal/${post.slug}`} className="block overflow-hidden mb-6 aspect-[16/10] relative">
                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10" />
@@ -29,6 +29,8 @@ export default function JournalPage() {
                   alt={post.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  priority={idx < 2}
                 />
               </Link>
               <div className="space-y-4">

@@ -142,6 +142,7 @@ export default function Home() {
           alt="Premium Silk Fabric for Wallpaper Base Material" 
           fill 
           className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-6">

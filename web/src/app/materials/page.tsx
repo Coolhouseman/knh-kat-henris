@@ -27,6 +27,8 @@ export default function MaterialsPage() {
                 alt="Silk Fabric Texture" 
                 fill 
                 className="object-cover shadow-xl"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                priority
               />
             </div>
             <div className="space-y-6 order-1 md:order-2">
@@ -63,6 +65,7 @@ export default function MaterialsPage() {
                 alt="Pearlescent Texture Detail" 
                 fill 
                 className="object-cover shadow-xl"
+                sizes="(min-width: 768px) 50vw, 100vw"
               />
             </div>
           </section>
@@ -75,6 +78,7 @@ export default function MaterialsPage() {
                 alt="Seamless Wallpaper Installation" 
                 fill 
                 className="object-cover shadow-xl"
+                sizes="(min-width: 768px) 50vw, 100vw"
               />
             </div>
             <div className="space-y-6 order-1 md:order-2">

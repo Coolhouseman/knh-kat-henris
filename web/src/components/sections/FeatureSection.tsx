@@ -26,6 +26,7 @@ const Feature = ({ title, description, imageUrl, reversed = false }: FeatureProp
             alt={title} 
             fill 
             className="object-cover hover:scale-105 transition-transform duration-700" 
+            sizes="(min-width: 768px) 50vw, 100vw"
           />
         </div>
       </motion.div>

@@ -26,6 +26,8 @@ export default function PhilosophyPage() {
           alt="Artist Studio"
           fill
           className="object-cover"
+          sizes="100vw"
+          priority
         />
       </div>
 
