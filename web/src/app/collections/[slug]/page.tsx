@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: collection.title,
     description: collection.inspiration.slice(0, 160) + "...",
     openGraph: {
-      title: `${collection.title} | Kat Henris`,
+      title: `${collection.title} | Kate Henris`,
       description: collection.subtitle,
       images: [collection.heroImage],
     },

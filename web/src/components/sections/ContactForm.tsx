@@ -58,7 +58,7 @@ function ContactFormContent() {
             </div>
 
             <div className="space-y-6">
-              <h3 className="text-xl font-serif">Kat Henris Studio</h3>
+              <h3 className="text-xl font-serif">Kate Henris Studio</h3>
               <p className="text-gray-600">
                 Auckland, New Zealand<br />
                 By Appointment Only

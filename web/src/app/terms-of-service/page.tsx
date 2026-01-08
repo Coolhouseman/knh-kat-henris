@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for Kat Henris. Understand our bespoke commission process, lead times, and payment terms.",
+  description: "Terms of Service for Kate Henris. Understand our bespoke commission process, lead times, and payment terms.",
   robots: {
     index: false,
     follow: true,
@@ -21,7 +21,7 @@ export default function TermsOfService() {
             <h2 className="text-2xl font-serif mb-4 text-gray-900">1. Agreement to Terms</h2>
             <p>
               These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;client&quot;), 
-              and Kat Henris (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to and use of our bespoke wallpaper design and installation services.
+              and Kate Henris (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to and use of our bespoke wallpaper design and installation services.
             </p>
           </section>
 
@@ -54,7 +54,7 @@ export default function TermsOfService() {
             <ul className="list-disc pl-5 mt-4 space-y-2">
               <li>A non-refundable deposit (typically 50%) is required to commence production.</li>
               <li>The remaining balance is due prior to shipping or scheduling installation.</li>
-              <li>Ownership of the goods remains with Kat Henris until full payment has been received.</li>
+              <li>Ownership of the goods remains with Kate Henris until full payment has been received.</li>
             </ul>
           </section>
 

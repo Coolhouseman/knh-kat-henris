@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Begin your bespoke commission. Contact Kat Henris to discuss your vision for hand-painted wallpaper and interior artistry.",
+  description: "Begin your bespoke commission. Contact Kate Henris to discuss your vision for hand-painted wallpaper and interior artistry.",
 };
 
 export default function ContactPage() {

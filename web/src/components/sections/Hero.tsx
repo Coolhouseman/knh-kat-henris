@@ -26,7 +26,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/20 z-10" />
         <Image
           src={heroImage}
-          alt="Kat Henris - The Art of Living"
+          alt="Kate Henris - The Art of Living"
           fill
           priority
           quality={90}
@@ -42,7 +42,7 @@ export function Hero() {
         className="relative z-20 text-center text-white p-4"
       >
         <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif font-bold tracking-widest mb-4 mix-blend-overlay">
-          KAT HENRIS
+          KATE HENRIS
         </h1>
         <p className="text-lg md:text-2xl font-light tracking-[0.2em] uppercase mix-blend-overlay">
           The Art of Living

@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif tracking-widest">KAT HENRIS</h3>
+            <h3 className="text-2xl font-serif tracking-widest">KATE HENRIS</h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
               Exquisite hand-painted wallpapers for the discerning few. 
               Elevating interiors through post-modern naturalism and bespoke artistry.
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-neutral-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-500">
-          <p>&copy; {new Date().getFullYear()} Kat Henris. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Kate Henris. All rights reserved.</p>
           <p>Designed with elegance in New Zealand.</p>
         </div>
       </div>

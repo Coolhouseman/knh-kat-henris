@@ -57,7 +57,7 @@ export function FeatureSection() {
       />
       <Feature 
         title="Immersive Atmosphere"
-        description="A Kat Henris wall is not a picture; it is an environment. Our designs are created to wrap around a room, creating a seamless, dream-like space where color and form dictate the mood."
+        description="A Kate Henris wall is not a picture; it is an environment. Our designs are created to wrap around a room, creating a seamless, dream-like space where color and form dictate the mood."
         imageUrl="https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/flora-hand-painted-on-silk-wallpaper-immersive-space.JPG"
         reversed
       />

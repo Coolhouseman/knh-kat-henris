@@ -17,32 +17,32 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://knh.nz'),
   title: {
-    default: "Kat Henris | Bespoke Hand-Painted Wallpapers",
-    template: "%s | Kat Henris"
+    default: "Kate Henris | Bespoke Hand-Painted Wallpapers",
+    template: "%s | Kate Henris"
   },
-  description: "Exquisite hand-painted wallpapers for the discerning few. Kat Henris creates bespoke, high-end wall coverings using silk, gold leaf, and traditional artistry.",
+  description: "Exquisite hand-painted wallpapers for the discerning few. Kate Henris creates bespoke, high-end wall coverings using silk, gold leaf, and traditional artistry.",
   keywords: ["hand-painted wallpaper", "bespoke wallpaper", "luxury wall coverings", "silk wallpaper", "gold leaf wallpaper", "mural art", "high-end interior design", "New Zealand luxury"],
-  authors: [{ name: "Kat Henris" }],
-  creator: "Kat Henris",
+  authors: [{ name: "Kate Henris" }],
+  creator: "Kate Henris",
   openGraph: {
     type: "website",
     locale: "en_NZ",
     url: "https://knh.nz",
-    title: "Kat Henris | The Art of Living",
+    title: "Kate Henris | The Art of Living",
     description: "Transforming residences into living galleries with exquisite hand-painted wallpapers.",
-    siteName: "Kat Henris",
+    siteName: "Kate Henris",
     images: [
       {
         url: "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2680&auto=format&fit=crop",
         width: 1200,
         height: 630,
-        alt: "Kat Henris Luxury Wallpaper",
+        alt: "Kate Henris Luxury Wallpaper",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kat Henris | Bespoke Hand-Painted Wallpapers",
+    title: "Kate Henris | Bespoke Hand-Painted Wallpapers",
     description: "Exquisite hand-painted wallpapers for the discerning few.",
     images: ["https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2680&auto=format&fit=crop"],
   },

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy Policy for Kat Henris. Learn how we handle your data and personal information.",
+  description: "Privacy Policy for Kate Henris. Learn how we handle your data and personal information.",
   robots: {
     index: false,
     follow: true,
@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-serif mb-4 text-gray-900">1. Introduction</h2>
             <p>
-              Kat Henris (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting the personal information 
+              Kate Henris (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your privacy and is committed to protecting the personal information 
               that you share with us. This Privacy Policy outlines how we collect, use, and safeguard your data when you visit our 
               website or engage our bespoke design and installation services.
             </p>
