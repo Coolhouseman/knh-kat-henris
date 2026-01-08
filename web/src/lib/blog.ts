@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     title: "Timeless Elegance Over Trends: Why Quality Endures",
     excerpt: "In a world of fast fashion and disposable design, we explore why investing in timeless, hand-crafted artistry creates spaces that never go out of style.",
     coverImage: "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/hand-painted-wallpaper-elegant-color-of-hanging-fruit-of-the-childhood-backyard.JPG",
-    date: "April 10, 2026",
+    date: "January 31, 2026",
     readTime: "4 min read",
     tags: ["Design Philosophy", "Timeless Design", "Interior Design"],
     content: `
@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Art of Commission: Creating Bespoke Wallpapers for Discerning Clients",
     excerpt: "The journey from initial consultation to final installation. How we collaborate with clients to create one-of-a-kind wallpapers that reflect their personal aesthetic and architectural vision.",
     coverImage: "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/floral-bird-detail-view-wallpaper-hand-painted.jpg",
-    date: "March 28, 2026",
+    date: "January 29, 2026",
     readTime: "3 min read",
     tags: ["Design Process", "Artistic Collaboration", "Artistic Process"],
     content: `
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Heirloom Wall: Why Hand-Painted Wallpaper is a Legacy Investment",
     excerpt: "In an age of disposable design, hand-painted wallpapers represent a return to heirloom quality. Understanding why bespoke artistry appreciates in value and becomes part of your family's legacy.",
     coverImage: "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/Handpainted_floral_wallpaper.png",
-    date: "March 15, 2026",
+    date: "January 27, 2026",
     readTime: "3 min read",
     tags: ["Heritage", "Craftsmanship", "Art History"],
     content: `
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     title: "Chiaroscuro of the Home: Light, Shadow, and the Role of Art",
     excerpt: "How texture and pigment interact with light to create living, breathing spaces. The role of art in shaping the atmosphere of a room through the dance of light and shadow.",
     coverImage: "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/moment-and-memory-photo-light-and-shadow-play.jpg",
-    date: "February 02, 2026",
+    date: "January 25, 2026",
     readTime: "3 min read",
     tags: ["Light", "Art", "Atmosphere"],
     content: `
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     title: "Paint vs. Wallpaper vs. Both: The Modern Approach to Interior Finishes",
     excerpt: "Exploring the strategic use of paint and wallpaper in contemporary interior design. Understanding optimal room distribution, when to combine both, and why following the golden ratio creates balanced, sophisticated spaces.",
     coverImage: "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/golden-ratio-logic-of-beauty.avif",
-    date: "January 28, 2026",
+    date: "January 23, 2026",
     readTime: "12 min read",
     tags: ["Interior Design", "Design Principles", "Color Theory"],
     content: `
