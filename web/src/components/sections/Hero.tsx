@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const heroImage = "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/living-room-fruits-and-floral-painting-on-dark-blue-silk.jpg";
 
@@ -23,11 +24,14 @@ export function Hero() {
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 bg-black/20 z-10" />
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url('${heroImage}')`,
-          }}
+        <Image
+          src={heroImage}
+          alt="Kat Henris - The Art of Living"
+          fill
+          priority
+          quality={90}
+          className="object-cover"
+          sizes="100vw"
         />
       </motion.div>
 
