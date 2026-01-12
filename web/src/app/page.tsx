@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Hand-Painted Wallpapers",
-  description: "Experience the new language of interior artistry. We create bespoke, hand-painted wallpapers that flatten nature into bold, post-modern environments.",
+  description: "Experience the new language of interior artistry. We create bespoke, artisanal designs and hand-painted wallpapers on premium fabrics that flatten nature into bold, post-modern environments.",
   openGraph: {
     title: "Hand-Painted Wallpapers",
     description: "Experience the new language of interior artistry. Bespoke, hand-painted wallpapers that flatten nature into bold, post-modern environments.",
