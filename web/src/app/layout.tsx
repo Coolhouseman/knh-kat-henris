@@ -24,7 +24,18 @@ export const metadata: Metadata = {
     template: "%s | Kate Henris"
   },
   description: "Exquisite hand-painted wallpapers for the discerning few. Kate Henris creates bespoke, high-end wall coverings using silk, gold leaf, and traditional artistry.",
-  keywords: ["hand-painted wallpaper", "bespoke wallpaper", "luxury wall coverings", "silk wallpaper", "gold leaf wallpaper", "mural art", "high-end interior design", "New Zealand luxury"],
+  keywords: [
+    "hand-painted wallpaper",
+    "bespoke wallpaper",
+    "luxury wall coverings",
+    "silk wallpaper",
+    "gold leaf wallpaper",
+    "mural art",
+    "high-end interior design",
+    "Auckland wallpaper",
+    "New Zealand wallpaper",
+    "Australia wallpaper",
+  ],
   authors: [{ name: "Kate Henris" }],
   creator: "Kate Henris",
   openGraph: {
@@ -90,6 +101,23 @@ export default function RootLayout({
     url: "https://knh.nz",
   };
 
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Kate Henris",
+    url: "https://knh.nz",
+    telephone: "+64 278877007",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Auckland",
+      addressCountry: "NZ",
+    },
+    areaServed: [
+      { "@type": "Country", name: "New Zealand" },
+      { "@type": "Country", name: "Australia" },
+    ],
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
@@ -102,6 +130,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <Navbar />
         <main className="min-h-screen">

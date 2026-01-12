@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/Hero";
 import { FeatureSection } from "@/components/sections/FeatureSection";
+import { FAQSection, faqJsonLd } from "@/components/sections/FAQSection";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
@@ -15,8 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const jsonLd = faqJsonLd();
   return (
     <div className="flex flex-col min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       
       <section className="py-24 px-6 bg-stone-50 text-center">
@@ -28,6 +34,8 @@ export default function Home() {
       </section>
 
       <FeatureSection />
+
+      <FAQSection />
 
       {/* Our Process Section */}
       <section className="py-24 md:py-32 bg-white">

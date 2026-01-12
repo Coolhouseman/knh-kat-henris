@@ -61,6 +61,7 @@ function ContactFormContent() {
               <h3 className="text-xl font-serif">Kate Henris Studio</h3>
               <p className="text-gray-600">
                 Auckland, New Zealand<br />
+                Serving New Zealand &amp; Australia<br />
                 By Appointment Only
               </p>
             </div>
