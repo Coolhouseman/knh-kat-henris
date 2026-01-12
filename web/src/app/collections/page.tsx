@@ -5,6 +5,22 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Wallpaper Collections",
   description: "Browse our exclusive collections of hand-painted wallpapers. Abstracted flora, surrealist waterscapes, and modern Chinoiserie.",
+  openGraph: {
+    title: "Wallpaper Collections | Kate Henris",
+    description: "Browse our exclusive collections of hand-painted wallpapers. Abstracted flora, surrealist waterscapes, and modern Chinoiserie.",
+    url: "/collections",
+    images: [
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2600&auto=format&fit=crop",
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wallpaper Collections | Kate Henris",
+    description: "Browse our exclusive collections of hand-painted wallpapers. Abstracted flora, surrealist waterscapes, and modern Chinoiserie.",
+    images: [
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2600&auto=format&fit=crop",
+    ],
+  },
 };
 
 const collections = [
@@ -47,6 +63,8 @@ export default function CollectionsPage() {
                   alt={collection.title} 
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  priority={index === 0}
                 />
               </div>
               <div className={`w-full md:w-1/2 space-y-4 ${index % 2 === 1 ? 'md:order-1 md:text-right' : ''}`}>

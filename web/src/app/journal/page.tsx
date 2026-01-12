@@ -6,6 +6,22 @@ import { blogPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "The Journal | Kate Henris",
   description: "Insights on slow design, craftsmanship, and the art of living. Read our latest stories.",
+  openGraph: {
+    title: "The Journal | Kate Henris",
+    description: "Insights on slow design, craftsmanship, and the art of living. Read our latest stories.",
+    url: "/journal",
+    images: [
+      "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2680&auto=format&fit=crop",
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Journal | Kate Henris",
+    description: "Insights on slow design, craftsmanship, and the art of living. Read our latest stories.",
+    images: [
+      "https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2680&auto=format&fit=crop",
+    ],
+  },
 };
 
 export default function JournalPage() {

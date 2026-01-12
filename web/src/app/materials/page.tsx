@@ -4,6 +4,22 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Materials & Craftsmanship",
   description: "Discover the silk fabric substrates, pearlescent textures, and seamless craftsmanship that define our difference.",
+  openGraph: {
+    title: "Materials & Craftsmanship",
+    description: "Discover the silk fabric substrates, pearlescent textures, and seamless craftsmanship that define our difference.",
+    url: "/materials",
+    images: [
+      "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/silk-fabric-matte-color.webp",
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Materials & Craftsmanship",
+    description: "Discover the silk fabric substrates, pearlescent textures, and seamless craftsmanship that define our difference.",
+    images: [
+      "https://hozn2hsy91dhisxu.public.blob.vercel-storage.com/silk-fabric-matte-color.webp",
+    ],
+  },
 };
 
 export default function MaterialsPage() {

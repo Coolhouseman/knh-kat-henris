@@ -15,6 +15,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Article Not Found" };
   }
 
+  const publishedTime = (() => {
+    const d = new Date(post.date);
+    return Number.isNaN(d.getTime()) ? undefined : d.toISOString();
+  })();
+
   return {
     title: post.title,
     description: post.excerpt,
@@ -23,6 +28,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.excerpt,
       images: [post.coverImage],
       type: "article",
+      url: `/journal/${post.slug}`,
+      publishedTime,
+      authors: ["Kate Henris"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.coverImage],
     },
   };
 }

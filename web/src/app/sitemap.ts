@@ -1,7 +1,13 @@
 import { MetadataRoute } from 'next';
+import { blogPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://knh.nz';
+
+  const safeDate = (value: string) => {
+    const d = new Date(value);
+    return Number.isNaN(d.getTime()) ? new Date() : d;
+  };
 
   // Static pages
   const routes = [
@@ -11,8 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/materials',
     '/philosophy',
     '/contact',
-    '/privacy-policy',
-    '/terms-of-service',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -33,15 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Journal Posts
-  const blogPosts = [
-    'renaissance-of-slow-design',
-    'living-with-art-emotion',
-  ].map((slug) => ({
-    url: `${baseUrl}/journal/${slug}`,
-    lastModified: new Date(),
+  const blogEntries = blogPosts.map((post) => ({
+    url: `${baseUrl}/journal/${post.slug}`,
+    lastModified: safeDate(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  return [...routes, ...collections, ...blogPosts];
+  return [...routes, ...collections, ...blogEntries];
 }

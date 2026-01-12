@@ -16,6 +16,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://knh.nz'),
+  alternates: {
+    canonical: 'https://knh.nz',
+  },
   title: {
     default: "Kate Henris | Bespoke Hand-Painted Wallpapers",
     template: "%s | Kate Henris"
@@ -46,6 +49,15 @@ export const metadata: Metadata = {
     description: "Exquisite hand-painted wallpapers for the discerning few.",
     images: ["https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=2680&auto=format&fit=crop"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    shortcut: ["/favicon.ico"],
+  },
   robots: {
     index: true,
     follow: true,
@@ -64,11 +76,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Kate Henris",
+    url: "https://knh.nz",
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Kate Henris",
+    url: "https://knh.nz",
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white text-gray-900`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <Navbar />
         <main className="min-h-screen">
           {children}

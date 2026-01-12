@@ -4,6 +4,22 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Philosophy | Post-Modern Naturalism",
   description: "We challenge traditional realism. We create immersive spaces through flattened forms, bold silhouettes, and the slow art of hand-painting.",
+  openGraph: {
+    title: "Our Philosophy | Post-Modern Naturalism",
+    description: "We challenge traditional realism. We create immersive spaces through flattened forms, bold silhouettes, and the slow art of hand-painting.",
+    url: "/philosophy",
+    images: [
+      "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=2670&auto=format&fit=crop",
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Philosophy | Post-Modern Naturalism",
+    description: "We challenge traditional realism. We create immersive spaces through flattened forms, bold silhouettes, and the slow art of hand-painting.",
+    images: [
+      "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=2670&auto=format&fit=crop",
+    ],
+  },
 };
 
 export default function PhilosophyPage() {
