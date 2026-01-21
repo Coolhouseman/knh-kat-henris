@@ -130,7 +130,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
+      <body
+        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white text-gray-900`}
+      >
         {/* Google Tag Manager */}
         {gtmId ? (
           <Script
@@ -161,10 +163,7 @@ gtag('config', '${ga4Id}', { send_page_view: false });`,
             />
           </>
         ) : null}
-      </head>
-      <body
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white text-gray-900`}
-      >
+
         {/* Google Tag Manager (noscript) */}
         {gtmId ? (
           <noscript>
