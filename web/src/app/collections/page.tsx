@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Wallpaper Collections",
   description: "Browse our exclusive collections of hand-painted wallpapers. Abstracted flora, surrealist waterscapes, and modern Chinoiserie.",
+  alternates: {
+    canonical: "/collections",
+  },
   openGraph: {
     title: "Wallpaper Collections | Kate Henris",
     description: "Browse our exclusive collections of hand-painted wallpapers. Abstracted flora, surrealist waterscapes, and modern Chinoiserie.",

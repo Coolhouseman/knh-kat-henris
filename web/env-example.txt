@@ -1,3 +1,7 @@
 RESEND_API_KEY=your_resend_api_key_here
 OWNER_EMAIL=your_personal_email@example.com
 
+# Analytics / Ads (client-side)
+NEXT_PUBLIC_GTM_ID=GTM-N2RZP23J
+NEXT_PUBLIC_GA4_ID=G-MZ0XH7KNV2
+

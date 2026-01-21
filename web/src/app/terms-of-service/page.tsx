@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms of Service for Kate Henris. Understand our bespoke commission process, lead times, and payment terms.",
+  alternates: {
+    canonical: "/terms-of-service",
+  },
   robots: {
     index: false,
     follow: true,

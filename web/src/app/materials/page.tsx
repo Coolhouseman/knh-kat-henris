@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Materials & Craftsmanship",
   description: "Discover the silk fabric substrates, pearlescent textures, and seamless craftsmanship that define our difference.",
+  alternates: {
+    canonical: "/materials",
+  },
   openGraph: {
     title: "Materials & Craftsmanship",
     description: "Discover the silk fabric substrates, pearlescent textures, and seamless craftsmanship that define our difference.",

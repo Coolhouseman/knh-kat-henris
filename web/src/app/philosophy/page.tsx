@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Philosophy | Post-Modern Naturalism",
   description: "We challenge traditional realism. We create immersive spaces through flattened forms, bold silhouettes, and the slow art of hand-painting.",
+  alternates: {
+    canonical: "/philosophy",
+  },
   openGraph: {
     title: "Our Philosophy | Post-Modern Naturalism",
     description: "We challenge traditional realism. We create immersive spaces through flattened forms, bold silhouettes, and the slow art of hand-painting.",

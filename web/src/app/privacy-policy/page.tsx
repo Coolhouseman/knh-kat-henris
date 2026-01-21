@@ -3,6 +3,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for Kate Henris. Learn how we handle your data and personal information.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
   robots: {
     index: false,
     follow: true,

@@ -6,6 +6,9 @@ import { blogPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "The Journal | Kate Henris",
   description: "Insights on slow design, craftsmanship, and the art of living. Read our latest stories.",
+  alternates: {
+    canonical: "/journal",
+  },
   openGraph: {
     title: "The Journal | Kate Henris",
     description: "Insights on slow design, craftsmanship, and the art of living. Read our latest stories.",

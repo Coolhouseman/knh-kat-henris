@@ -63,10 +63,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: collection.title,
     description: collection.inspiration.slice(0, 160) + "...",
+    alternates: {
+      canonical: `/collections/${params.slug}`,
+    },
     openGraph: {
       title: `${collection.title} | Kate Henris`,
       description: collection.subtitle,
       images: [collection.heroImage],
+      url: `/collections/${params.slug}`,
     },
   };
 }

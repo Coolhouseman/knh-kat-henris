@@ -3,6 +3,8 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
+import { Analytics } from "@/components/Analytics";
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
@@ -16,9 +18,6 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://knh.nz'),
-  alternates: {
-    canonical: 'https://knh.nz',
-  },
   title: {
     default: "Kate Henris | Bespoke Hand-Painted Wallpapers",
     template: "%s | Kate Henris"
@@ -95,6 +94,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "GTM-N2RZP23J";
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID || "G-MZ0XH7KNV2";
+
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -128,9 +130,54 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Google Tag Manager */}
+        {gtmId ? (
+          <Script
+            id="gtm"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`,
+            }}
+          />
+        ) : null}
+
+        {/* GA4 (gtag.js). If you also configure GA4 inside GTM, you can remove this. */}
+        {ga4Id ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="ga4"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${ga4Id}', { send_page_view: false });`,
+              }}
+            />
+          </>
+        ) : null}
+      </head>
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white text-gray-900`}
       >
+        {/* Google Tag Manager (noscript) */}
+        {gtmId ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
+
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
