@@ -37,13 +37,20 @@ function ContactFormContent() {
 
       if (res.ok) {
         // Conversion event (fires only on successful inquiry submission)
-        window.gtag?.("event", "submit_inquiry", {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag =
+          window.gtag ||
+          ((...args: unknown[]) => {
+            window.dataLayer?.push(args as unknown as Record<string, unknown>);
+          });
+
+        window.gtag("event", "submit_inquiry", {
           form_name: "contact",
           subject: formData.subject || "General Inquiry",
         });
 
         // GTM-friendly event for tags/triggers (Meta Pixel, etc.)
-        window.dataLayer?.push({
+        window.dataLayer.push({
           event: "submit_inquiry",
           form_name: "contact",
           subject: formData.subject || "General Inquiry",

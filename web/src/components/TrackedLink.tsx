@@ -34,8 +34,15 @@ export function TrackedLink({
       // fire our tracking first (still allows navigation)
       const params = { ...(eventParams || {}) };
 
-      window.gtag?.("event", eventName, params);
-      window.dataLayer?.push({ event: eventName, ...params });
+      window.dataLayer = window.dataLayer || [];
+      window.gtag =
+        window.gtag ||
+        ((...args: unknown[]) => {
+          window.dataLayer?.push(args as unknown as Record<string, unknown>);
+        });
+
+      window.gtag("event", eventName, params);
+      window.dataLayer.push({ event: eventName, ...params });
 
       onClick?.(e);
     },

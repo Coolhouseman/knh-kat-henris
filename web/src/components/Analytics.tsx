@@ -19,15 +19,23 @@ export function Analytics() {
 
     const page_path = `${pathname}${window.location.search || ""}`;
 
+    // Ensure queueing exists even if gtag.js hasn't loaded yet
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      ((...args: unknown[]) => {
+        window.dataLayer?.push(args as unknown as Record<string, unknown>);
+      });
+
     // GA4 SPA pageviews
-    window.gtag?.("event", "page_view", {
+    window.gtag("event", "page_view", {
       page_path,
       page_location: window.location.href,
       page_title: document.title,
     });
 
     // Optional: a simple GTM-friendly pageview event
-    window.dataLayer?.push({
+    window.dataLayer.push({
       event: "page_view",
       page_path,
       page_location: window.location.href,

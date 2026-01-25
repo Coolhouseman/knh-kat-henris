@@ -133,6 +133,18 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white text-gray-900`}
       >
+        {/* Ensure dataLayer + gtag exist immediately so events can be queued before gtag.js loads */}
+        {ga4Id ? (
+          <Script
+            id="gtag-init"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};`,
+            }}
+          />
+        ) : null}
+
         {/* Google Tag Manager */}
         {gtmId ? (
           <Script
