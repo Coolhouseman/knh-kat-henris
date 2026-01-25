@@ -27,8 +27,8 @@ export function Analytics() {
         window.dataLayer?.push(args as unknown as Record<string, unknown>);
       });
 
-    // GA4 SPA pageviews
-    window.gtag("event", "page_view", {
+    // GA4 SPA pageviews (recommended: config call with page_* params)
+    window.gtag("config", ga4Id, {
       page_path,
       page_location: window.location.href,
       page_title: document.title,

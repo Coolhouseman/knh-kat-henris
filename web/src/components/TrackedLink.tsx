@@ -32,7 +32,8 @@ export function TrackedLink({
   const handleClick = useCallback<React.MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
       // fire our tracking first (still allows navigation)
-      const params = { ...(eventParams || {}) };
+      const ga4Id = process.env.NEXT_PUBLIC_GA4_ID || "G-MZ0XH7KNV2";
+      const params = { ...(eventParams || {}), ...(ga4Id ? { send_to: ga4Id } : {}) };
 
       window.dataLayer = window.dataLayer || [];
       window.gtag =

@@ -44,16 +44,19 @@ function ContactFormContent() {
             window.dataLayer?.push(args as unknown as Record<string, unknown>);
           });
 
-        window.gtag("event", "submit_inquiry", {
+        const ga4Id = process.env.NEXT_PUBLIC_GA4_ID || "G-MZ0XH7KNV2";
+        const eventParams = {
           form_name: "contact",
           subject: formData.subject || "General Inquiry",
-        });
+          ...(ga4Id ? { send_to: ga4Id } : {}),
+        };
+
+        window.gtag("event", "submit_inquiry", eventParams);
 
         // GTM-friendly event for tags/triggers (Meta Pixel, etc.)
         window.dataLayer.push({
           event: "submit_inquiry",
-          form_name: "contact",
-          subject: formData.subject || "General Inquiry",
+          ...eventParams,
         });
 
         setStatus("success");
