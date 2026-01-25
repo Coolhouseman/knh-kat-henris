@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import Script from "next/script";
 import { Analytics } from "@/components/Analytics";
+import { MetaPixel } from "@/components/MetaPixel";
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"],
@@ -189,6 +190,7 @@ gtag('config', '${ga4Id}', { send_page_view: false });`,
         ) : null}
 
         <Analytics />
+        <MetaPixel />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

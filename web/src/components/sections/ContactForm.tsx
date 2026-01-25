@@ -7,6 +7,7 @@ declare global {
   interface Window {
     dataLayer?: Array<Record<string, unknown>>;
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -58,6 +59,16 @@ function ContactFormContent() {
           event: "submit_inquiry",
           ...eventParams,
         });
+
+        // Meta Pixel Event
+        if (window.fbq) {
+          window.fbq('track', 'Lead', {
+            content_name: 'Contact Form',
+            content_category: 'Lead',
+            value: 0.00,
+            currency: 'NZD'
+          });
+        }
 
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
