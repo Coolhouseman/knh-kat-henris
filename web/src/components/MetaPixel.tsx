@@ -19,7 +19,6 @@ export function MetaPixel() {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '786322701162503');
-            fbq('track', 'PageView');
           `,
         }}
       />

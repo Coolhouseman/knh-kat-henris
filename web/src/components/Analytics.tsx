@@ -49,9 +49,9 @@ function AnalyticsContent() {
     });
 
     // Meta Pixel PageView
-    // The <Script> in MetaPixel.tsx handles the initial PageView automatically.
-    // We only want to fire subsequent PageViews on route changes.
-    if (window.fbq && !isFirstLoad.current) {
+    // We fire this on every route change, including the first one.
+    // This replaces the hardcoded track call in MetaPixel.tsx to avoid duplicates.
+    if (window.fbq) {
       window.fbq('track', 'PageView');
     }
 
