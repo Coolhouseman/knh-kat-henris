@@ -3,6 +3,13 @@
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
+declare global {
+  interface Window {
+    dataLayer?: Array<Record<string, unknown>>;
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 function ContactFormContent() {
   const searchParams = useSearchParams();
   const initialSubject = searchParams.get("subject") ? `Inquiry: ${searchParams.get("subject")}` : "";
@@ -29,6 +36,19 @@ function ContactFormContent() {
       });
 
       if (res.ok) {
+        // Conversion event (fires only on successful inquiry submission)
+        window.gtag?.("event", "submit_inquiry", {
+          form_name: "contact",
+          subject: formData.subject || "General Inquiry",
+        });
+
+        // GTM-friendly event for tags/triggers (Meta Pixel, etc.)
+        window.dataLayer?.push({
+          event: "submit_inquiry",
+          form_name: "contact",
+          subject: formData.subject || "General Inquiry",
+        });
+
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       } else {
@@ -161,6 +181,7 @@ function ContactFormContent() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
+                  data-gtm="contact-submit-inquiry"
                   className="w-full bg-gray-900 text-white py-4 uppercase tracking-widest hover:bg-gray-700 transition-colors disabled:opacity-50"
                 >
                   {status === "submitting" ? "Sending..." : "Submit Inquiry"}
