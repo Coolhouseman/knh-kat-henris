@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 declare global {
@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-export function Analytics() {
+function AnalyticsContent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const isFirstLoad = useRef(true);
@@ -61,3 +61,10 @@ export function Analytics() {
   return null;
 }
 
+export function Analytics() {
+  return (
+    <Suspense fallback={null}>
+      <AnalyticsContent />
+    </Suspense>
+  );
+}
