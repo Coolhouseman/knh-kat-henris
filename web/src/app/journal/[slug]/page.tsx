@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { blogPosts } from "@/lib/blog";
+import { TrackedLink } from "@/components/TrackedLink";
 
 interface PageProps {
   params: { slug: string };
@@ -101,9 +101,15 @@ export default function BlogPostPage({ params }: PageProps) {
           <p className="text-gray-600 mb-8">
             Interested in how these philosophies translate to your home?
           </p>
-          <Link href="/contact" className="inline-block bg-gray-900 text-white px-8 py-3 uppercase tracking-widest text-sm hover:bg-gray-700 transition-colors">
+          <TrackedLink
+            href="/contact"
+            eventName="contact_intent"
+            eventParams={{ source: "journal_post_footer_cta", slug: post.slug }}
+            dataGtm="journal-start-commission"
+            className="inline-block bg-gray-900 text-white px-8 py-3 uppercase tracking-widest text-sm hover:bg-gray-700 transition-colors"
+          >
             Start a Commission
-          </Link>
+          </TrackedLink>
         </div>
       </div>
     </article>

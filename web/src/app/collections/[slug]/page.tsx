@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { TrackedLink } from "@/components/TrackedLink";
 
 // Mock Data
 const collectionsData: Record<string, {
@@ -154,12 +154,15 @@ export default function CollectionStoryPage({ params }: { params: { slug: string
           <p className="text-lg text-gray-500 mb-8 italic">
             &quot;To live with {collection.title} is to live inside a painting.&quot;
           </p>
-          <Link 
+          <TrackedLink
             href={`/contact?subject=${encodeURIComponent(collection.title)}`}
+            eventName="contact_intent"
+            eventParams={{ source: "collection_cta", slug: params.slug, subject: collection.title }}
+            dataGtm="collection-inquire"
             className="inline-block bg-gray-900 text-white px-12 py-4 uppercase tracking-widest hover:bg-gray-700 transition-colors"
           >
             Inquire About This Collection
-          </Link>
+          </TrackedLink>
         </div>
       </div>
     </article>

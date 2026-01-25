@@ -5,6 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { TrackedLink } from "@/components/TrackedLink";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -45,13 +46,26 @@ export function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm tracking-widest hover:text-gray-400 transition-colors uppercase"
-            >
-              {link.name}
-            </Link>
+            link.href === "/contact" ? (
+              <TrackedLink
+                key={link.name}
+                href={link.href}
+                eventName="contact_intent"
+                eventParams={{ source: "navbar_desktop" }}
+                dataGtm="nav-contact"
+                className="text-sm tracking-widest hover:text-gray-400 transition-colors uppercase"
+              >
+                {link.name}
+              </TrackedLink>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm tracking-widest hover:text-gray-400 transition-colors uppercase"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </div>
 
@@ -73,14 +87,28 @@ export function Navbar() {
               className="absolute top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center space-y-8 md:hidden"
             >
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-2xl font-serif tracking-widest"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
+                link.href === "/contact" ? (
+                  <TrackedLink
+                    key={link.name}
+                    href={link.href}
+                    eventName="contact_intent"
+                    eventParams={{ source: "navbar_mobile" }}
+                    dataGtm="nav-contact-mobile"
+                    className="text-2xl font-serif tracking-widest"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </TrackedLink>
+                ) : (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-2xl font-serif tracking-widest"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </motion.div>
           )}

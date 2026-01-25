@@ -4,6 +4,7 @@ import { FAQSection, faqJsonLd } from "@/components/sections/FAQSection";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Hand-Painted Wallpapers",
@@ -93,12 +94,15 @@ export default function Home() {
             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
               We handle everything. From concept to completion.
             </p>
-            <Link 
-              href="/contact" 
+            <TrackedLink
+              href="/contact"
+              eventName="contact_intent"
+              eventParams={{ source: "home_process_cta" }}
+              dataGtm="home-get-in-touch"
               className="inline-block border border-gray-900 px-8 py-3 uppercase tracking-widest hover:bg-gray-900 hover:text-white transition-colors text-sm"
             >
               Get in touch with us
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>
